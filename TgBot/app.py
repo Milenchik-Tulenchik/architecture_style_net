@@ -30,6 +30,10 @@ def get_photo(message):
 def start_message(message):
     bot.send_message(message.chat.id, 'Пришлите фото здания сюда, а нейронная сеть определит его архитектурный стиль')
 
+@bot.message_handler(content_types=['text'])
+def start_message(message):
+    bot.send_message(message.chat.id, 'Пришлите фото здания')
+
 @bot.message_handler(content_types=['photo'])
 def repeat_all_messages(message):
     try:
